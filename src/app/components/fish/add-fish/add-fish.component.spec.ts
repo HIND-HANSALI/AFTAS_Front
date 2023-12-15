@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FishComponent } from './fish.component';
+import { AddFishComponent } from './add-fish.component';
 
-describe('FishComponent', () => {
-  let component: FishComponent;
-  let fixture: ComponentFixture<FishComponent>;
+describe('AddFishComponent', () => {
+  let component: AddFishComponent;
+  let fixture: ComponentFixture<AddFishComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FishComponent]
+      declarations: [AddFishComponent]
     });
-    fixture = TestBed.createComponent(FishComponent);
+    fixture = TestBed.createComponent(AddFishComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
