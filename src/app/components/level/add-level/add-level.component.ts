@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Level } from 'src/app/models/Level';
-import { LevelService } from 'src/app/services/level.service';
+import { LevelService } from 'src/app/services/level/level.service';
 
 @Component({
   selector: 'app-add-level',

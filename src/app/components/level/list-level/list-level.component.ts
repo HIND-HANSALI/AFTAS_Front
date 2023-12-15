@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LevelService } from 'src/app/services/level.service';
+import { LevelService } from 'src/app/services/level/level.service';
 
 @Component({
   selector: 'app-list-level',
