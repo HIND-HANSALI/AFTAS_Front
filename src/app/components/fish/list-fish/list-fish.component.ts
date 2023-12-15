@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FishService } from 'src/app/services/fish.service';
+import { FishService } from 'src/app/services/fish/fish.service';
 
 @Component({
   selector: 'app-list-fish',
