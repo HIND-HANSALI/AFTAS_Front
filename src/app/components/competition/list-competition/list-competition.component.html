@@ -31,7 +31,7 @@
         </thead>
         <tbody>
           <tr
-            *ngFor="let competition of competitions"
+            *ngFor="let competition of paginatedCompetitions"
             class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
           >
             <th
@@ -62,20 +62,33 @@
               {{ competition.amount | currency }}
             </td>
             <td class="px-6 py-4">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
-              >
-              <a
-                href="#"
-                class="px-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
-              >
+              
+              <button class="px-2 font-medium text-blue-600 dark:text-blue-500 hover:underline" (click)="editCompetition(competition.id)">Edit</button>
+              <button class="btn btn-sm btn-danger mx-1" (click)="deleteCompetition(competition.id)">Delete</button>
             </td>
           </tr>
         </tbody>
       </table>
+
+       <!-- After the table in your competition.component.html -->
+       <div class="flex justify-center items-center mt-4">
+        <button 
+          [disabled]="currentPage === 1"
+          (click)="currentPage = currentPage - 1"
+          class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed">
+          Previous
+        </button>
+
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+        <button 
+          [disabled]="currentPage === totalPages"
+          (click)="currentPage = currentPage + 1"
+          class="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed">
+          Next
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
