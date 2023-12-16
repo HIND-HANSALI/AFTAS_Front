@@ -7,5 +7,7 @@ export interface Competition {
     totalMember: number;
     location: string;
     amount: number;
+
+    data?: any;
    
   }

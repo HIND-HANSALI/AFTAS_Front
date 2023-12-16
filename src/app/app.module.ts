@@ -18,6 +18,14 @@ import { UpdateFishComponent } from './components/fish/update-fish/update-fish.c
 import { UpdateLevelComponent } from './components/level/update-level/update-level.component';
 import { ListLevelComponent } from './components/level/list-level/list-level.component';
 import { AddLevelComponent } from './components/level/add-level/add-level.component';
+import { ListHuntingComponent } from './components/hunting/list-hunting/list-hunting.component';
+import { AddHuntingComponent } from './components/hunting/add-hunting/add-hunting.component';
+import { UpdateHuntingComponent } from './components/hunting/update-hunting/update-hunting.component';
+import { ListMemberComponent } from './components/member/list-member/list-member.component';
+import { AddMemberComponent } from './components/member/add-member/add-member.component';
+import { UpdateMemberComponent } from './components/member/update-member/update-member.component';
+import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
+import { ListRankingComponent } from './components/ranking/list-ranking/list-ranking.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +42,15 @@ import { AddLevelComponent } from './components/level/add-level/add-level.compon
     UpdateFishComponent,
     UpdateLevelComponent,
     ListLevelComponent,
-    AddLevelComponent
+    AddLevelComponent,
+    ListHuntingComponent,
+    AddHuntingComponent,
+    UpdateHuntingComponent,
+    ListMemberComponent,
+    AddMemberComponent,
+    UpdateMemberComponent,
+    AddRankingComponent,
+    ListRankingComponent
   ],
   imports: [
     BrowserModule,

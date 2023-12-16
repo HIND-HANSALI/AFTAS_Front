@@ -1,12 +1,8 @@
 import { Level } from "./Level"; 
 
 export interface Fish {
-  id: number;
+  id: number ;
   name: string;
   averageWeight: number;
-  level: {
-    id: number;
-    description: string;
-    points: number;
-  };
+  level_id: number
 }
