@@ -1,0 +1,59 @@
+<p>add-member works!</p>
+
+<p>add-competition works!</p>
+<div id="toast-container" class="fixed top-0 left-0 p-3 z-11"></div>
+
+<div class="p-4 sm:ml-64">
+    <div class="flex justify-center">
+        <form (submit)="createMember()" class="bg-white w-3/4 rounded-4 shadow p-3 bg-body-tertiary">
+            <h5 class="px-3 mb-3 text-center">Form Create Member</h5>
+            
+            <div class="mb-3 px-3">
+                <label for="membershipNumber" class="form-label">MemberShip Number</label>
+                <input type="number" [(ngModel)]="newMember.membershipNumber" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="membershipNumber"  name="membershipNumber" required>
+            </div>
+           
+            <div class="flex w-full">
+                <div class="mb-3 w-1/2 px-3">
+                    <label for="startTime" class="form-label">Name</label>
+                    <input type="text" [(ngModel)]="newMember.name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="name"  name="name" required>
+                </div>
+                <div class="mb-3 w-1/2 px-3">
+                    <label for="familyNam" class="form-label">Family Name</label>
+                    <input type="text" [(ngModel)]="newMember.familyName" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="familyName" name="familyName" required>
+                </div>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="accessDate" class="form-label">Access Date</label>
+                <input type="date" [(ngModel)]="newMember.accessDate" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="accessDate"  name="accessDate" required>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="nationality"  class="form-label">Nationality</label>
+                <input type="text" [(ngModel)]="newMember.nationality" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="nationality"  name="nationality" required>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="identityNumber" class="form-label">Identity Number</label>
+                <input type="text"   [(ngModel)]="newMember.identityNumber" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="identityNumber"  name="identityNumber" required>
+            </div>
+            <div class="mb-3 px-3">
+                <label for="level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select
+                    Level</label>
+                <select id="level"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                id="identityDocumentType" [(ngModel)]="newMember.identityDocumentType" name="identityDocumentType" required>
+
+                <option *ngFor="let docType of identityDocumentTypes" [ngValue]="docType">{{ docType }}</option>
+                </select>
+            </div>
+            
+            
+            <div class="flex justify-center">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create Competition</button>
+              
+            </div>
+        </form>
+    </div>
+</div>
+
