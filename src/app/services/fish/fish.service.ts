@@ -17,7 +17,7 @@ export class FishService {
     return this.httpClient.get(`${this.baseURL}`);
   }
   
-  saveFishe(fish: Fish): Observable<Fish> {
+  saveFish(fish: Fish): Observable<Fish> {
     return this.httpClient.post<Fish>(`${this.baseURL}`, fish);
   } 
 }
