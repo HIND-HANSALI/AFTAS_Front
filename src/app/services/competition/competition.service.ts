@@ -18,4 +18,17 @@ export class CompetitionService {
   saveCompetition(competition: Competition): Observable<Competition> {
     return this.httpClient.post<Competition>(`${this.baseURL}`, competition);
   }
+
+  getCompetitionById(id: number): Observable<Competition> {
+    return this.httpClient.get<Competition>(`${this.baseURL}/${id}`);
+  }
+
+  updateCompetition(id: number, competition: Competition): Observable<Competition> {
+    return this.httpClient.put<Competition>(`${this.baseURL}/${id}`, competition);
+  }
+  
+  deleteCompetition(id: number): Observable<any> {
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+
 }

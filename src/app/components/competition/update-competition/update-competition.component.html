@@ -1,1 +1,48 @@
-<p>update-competition works!</p>
+<!-- <p>update-competition works!</p> -->
+<div id="toast-container" class="fixed top-0 left-0 p-3 z-11"></div>
+
+<div class="p-4 sm:ml-64">
+    <div class="flex justify-center">
+        
+        <form (ngSubmit)="updateCompetition()" class="bg-white w-3/4 rounded-4 shadow p-3 bg-body-tertiary">
+            <h5 class="px-3 mb-3 text-center">Form Update Competition</h5>
+            
+            <div class="mb-3 px-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" [(ngModel)]="newCompetition.date" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="date"  name="date" required>
+            </div>
+           
+            <div class="flex w-full">
+                <div class="mb-3 w-1/2 px-3">
+                    <label for="startTime" class="form-label">Start Time</label>
+                    <input type="time" [(ngModel)]="newCompetition.startTime" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="startTime"  name="startTime" required>
+                </div>
+                <div class="mb-3 w-1/2 px-3">
+                    <label for="endTime" class="form-label">End Time</label>
+                    <input type="time" [(ngModel)]="newCompetition.endTime" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="endTime" name="endTime" required>
+                </div>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="numberOfParticipants" class="form-label">Number of Participants</label>
+                <input type="number" [(ngModel)]="newCompetition.totalMember" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="totalMember"  name="totalMember" required>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="location"  class="form-label">Location</label>
+                <input type="text" [(ngModel)]="newCompetition.location" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="location"  name="location" required>
+            </div>
+            
+            <div class="mb-3 px-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number"   [(ngModel)]="newCompetition.amount"class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="amount"  name="amount" required>
+            </div>
+            
+            <div class="flex justify-center">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update Competition</button>
+              
+            </div>
+        </form>
+    </div>
+</div>
+
