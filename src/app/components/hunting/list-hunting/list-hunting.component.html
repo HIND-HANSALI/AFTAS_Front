@@ -1,0 +1,70 @@
+<!-- <p>list-competition works!</p> -->
+<div class="p-4 sm:ml-64">
+    <div class="flex justify-between items-center py-4">
+      <h4 class="flex items-center">
+          Huntings
+      </h4>
+      <a href="/huntings/create" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >
+          <b>+</b> Add Hunting
+      </a>
+  </div>
+  
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg">
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">ID</th>
+              <th>Member</th>
+              <th>Competition</th>
+              <th>Fish</th>
+              <th>Number Of Fish</th>
+              <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let hunt of huntings"
+              class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+              {{ hunt.id }}
+              </th>
+              <td class="px-6 py-4">
+                 {{ hunt.member?.name  }} 
+              </td>
+              <td class="px-6 py-4">
+                {{ hunt.competition?.code }}
+              </td>
+              <td class="px-6 py-4">
+                {{ hunt.fish?.name }}
+              </td>
+              <td class="px-6 py-4">
+                {{ hunt.numberOfFish }}
+              </td>
+              
+              <td class="px-6 py-4">
+                <a
+                  href="#"
+                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  >Edit</a
+                >
+                <a
+                  href="#"
+                  class="px-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  >Edit</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
