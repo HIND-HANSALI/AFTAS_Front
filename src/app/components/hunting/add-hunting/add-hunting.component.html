@@ -1,0 +1,77 @@
+<p>add-hunting works!</p>
+
+<div id="toast-container" class="fixed top-0 left-0 p-3 z-11"></div>
+
+<div class="p-4 sm:ml-64">
+    <!-- <div *ngIf="successmsg" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Success! </strong> {{successmsg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> -->
+    <div class="flex justify-center">
+       
+        
+        <form (submit)="createHunting()" class="bg-white w-3/4 rounded-4 shadow p-3 bg-body-tertiary">
+            <h5 class="px-3 mb-3 text-center">Form Create Hunting</h5>
+
+            
+            <!-- <div class="mb-3 px-3">
+                <label for="description" class="form-label">Member</label>
+                <input type="text"  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="description"  name="description" required>
+            </div> -->
+            <div class="mb-3 px-3">
+                <label for="level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Member</label>
+                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   id="memberId" name="memberId" [(ngModel)]="selectedMember" required>
+
+                    <option *ngFor="let member of members" value="{{member.id}}">
+                        {{ member.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3 px-3">
+                <label for="level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Competition</label>
+                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   id="competitionId" name="competitionId" [(ngModel)]="selectedCompetition" required>
+
+                    <option *ngFor="let competition of competitions" value="{{competition.id}}">
+                        {{ competition.code }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3 px-3">
+                <label for="level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Fish</label>
+                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                   id="fishId" name="fishId" [(ngModel)]="selectedFish" required>
+
+                    <option *ngFor="let fish of fishes" value="{{fish.id}}">
+                        {{ fish.name }}
+                    </option>
+                </select>
+            </div>
+           
+           
+          
+
+            <div class="mb-3 px-3">
+                <label for="score" class="form-label">Number Of Fish</label>
+                <input type="number" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="numberOfFish"
+                  name="numberOfFish"  [(ngModel)]="newHunting.numberOfFish" required>
+              </div>
+
+              <div class="mb-3 px-3">
+                <label for="score" class="form-label">average Weight</label>
+                <input type="number" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" id="averageWeight"
+                  name="averageWeight" [(ngModel)]="newHunting.averageWeight" required>
+              </div>
+
+           
+            
+       
+            <div class="flex justify-center">
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register Member</button>
+              
+            </div>
+        </form>
+    </div>
