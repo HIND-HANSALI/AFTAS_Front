@@ -26,6 +26,7 @@ import { AddMemberComponent } from './components/member/add-member/add-member.co
 import { UpdateMemberComponent } from './components/member/update-member/update-member.component';
 import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
 import { ListRankingComponent } from './components/ranking/list-ranking/list-ranking.component';
+import { CompetitionStatusComponent } from './components/competition/competition-status/competition-status.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ListRankingComponent } from './components/ranking/list-ranking/list-ran
     AddMemberComponent,
     UpdateMemberComponent,
     AddRankingComponent,
-    ListRankingComponent
+    ListRankingComponent,
+    CompetitionStatusComponent
   ],
   imports: [
     BrowserModule,

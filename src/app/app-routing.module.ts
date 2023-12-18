@@ -17,8 +17,10 @@ import { UpdateHuntingComponent } from './components/hunting/update-hunting/upda
 import { ListMemberComponent } from './components/member/list-member/list-member.component';
 import { AddMemberComponent } from './components/member/add-member/add-member.component';
 import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
+import { CompetitionStatusComponent } from './components/competition/competition-status/competition-status.component';
 
 const routes: Routes = [
+  { path: 'competition-status', component:CompetitionStatusComponent},
   { path: 'huntings', component:ListHuntingComponent},
   { path: 'huntings/create', component: AddHuntingComponent},
   { path: 'members', component: ListMemberComponent},
@@ -40,9 +42,10 @@ const routes: Routes = [
   { path: 'fish/update', component: UpdateFishComponent},
   { path: '**', redirectTo: '/not-found' },
 
-  // { path: 'huntings', component:ListHuntingComponent},
+  
  
   { path: 'hunting/update', component: UpdateHuntingComponent },
+
   
 ];
 

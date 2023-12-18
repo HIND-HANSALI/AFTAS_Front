@@ -11,7 +11,7 @@ import { CompetitionService } from 'src/app/services/competition/competition.ser
 export class ListCompetitionComponent {
   
  currentPage = 1;
- itemsPerPage = 2; 
+ itemsPerPage = 5; 
 
   competitions:any[]= [];
   constructor(private competitionService: CompetitionService,private router:Router) {  }
