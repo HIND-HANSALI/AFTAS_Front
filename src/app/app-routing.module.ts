@@ -18,9 +18,12 @@ import { ListMemberComponent } from './components/member/list-member/list-member
 import { AddMemberComponent } from './components/member/add-member/add-member.component';
 import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
 import { CompetitionStatusComponent } from './components/competition/competition-status/competition-status.component';
+import { ListRankingComponent } from './components/ranking/list-ranking/list-ranking.component';
 
 const routes: Routes = [
-  { path: 'competition-status', component:CompetitionStatusComponent},
+  
+  { path: 'rankings', component:ListRankingComponent},
+  { path: '', component:CompetitionStatusComponent},
   { path: 'huntings', component:ListHuntingComponent},
   { path: 'huntings/create', component: AddHuntingComponent},
   { path: 'members', component: ListMemberComponent},
@@ -28,7 +31,7 @@ const routes: Routes = [
   { path: 'rakings/create', component: AddRankingComponent}, // register Member in a competition
   
   { path: 'competitions', component: ListCompetitionComponent },
-  { path: '', component: NavbarComponent },
+  // { path: '', component: NavbarComponent },
   { path: 'competitions/create', component: AddCompetitionComponent },
   { path: 'competitions/update/:id', component: UpdateCompetitionComponent },
 
