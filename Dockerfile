@@ -12,8 +12,13 @@ COPY . .
 
 RUN ng build --configuration=production
 
-FROM nginx:latest
+# FROM nginx:latest
 
-COPY --from=build app/dist/aftas-angular /usr/share/nginx/html
+# COPY --from=build app/dist/aftas-angular /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 4200
+
+CMD ["ng","serve"]
+
+
+
