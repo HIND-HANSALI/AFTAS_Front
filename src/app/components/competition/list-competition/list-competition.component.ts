@@ -56,4 +56,14 @@ export class ListCompetitionComponent {
       }
     );
   }
+
+  hasAuthorityManager(): boolean {
+
+    const role = localStorage.getItem('role');
+
+    return this.isLoggedIn() && (role === 'ROLE_MANAGER');
+  }
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
+  }
 }

@@ -35,9 +35,8 @@ id="drawer-navigation"
   <ul class="space-y-2">
   
    
-    <li>
+    <li *ngIf="hasAuthorityManager()">
       <a routerLink="/members"
-        href="#"
         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
       >
       <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -46,9 +45,8 @@ id="drawer-navigation"
         <span class="ml-3">Members</span>
       </a>
     </li>
-    <li>
+    <li >
       <a routerLink="/huntings"
-        href="#"
         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
       >
       <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
@@ -59,7 +57,6 @@ id="drawer-navigation"
     </li>
     <li>
       <a routerLink="/rankings"
-        href="#"
         class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
       >
       <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
@@ -69,7 +66,7 @@ id="drawer-navigation"
       </a>
     </li>
    
-    <li>
+    <li >
       <button
         type="button"
         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -109,13 +106,11 @@ id="drawer-navigation"
       <ul id="dropdown-pages" class="hidden py-2 space-y-2">
         <li>
           <a routerLink="/competitions"
-            href="#"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >All Competitions</a>
         </li>
         <li>
           <a routerLink="/rakings/create"
-            href="#"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >Register Member in Competition</a>
         </li>
@@ -123,7 +118,7 @@ id="drawer-navigation"
       </ul>
     </li>
     
-    <li>
+    <li *ngIf="hasAuthorityManager()">
       <button
         type="button"
         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -194,7 +189,7 @@ id="drawer-navigation"
         </span>
       </a>
     </li> -->
-    <li>
+    <li *ngIf="hasAuthorityManager()">
       <button
         type="button"
         class="flex items-center p-2 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
@@ -224,14 +219,12 @@ id="drawer-navigation"
       <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
         <li>
           <a routerLink="/levels"
-            href="#"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >All Levels</a
           >
         </li>
         <li>
           <a routerLink="/levels/create"
-            href="#"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >Add Level</a
           >
@@ -268,7 +261,6 @@ id="drawer-navigation"
     </svg>
   </a>
   <a
-    href="#"
     data-tooltip-target="tooltip-settings"
     class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600"
   >
