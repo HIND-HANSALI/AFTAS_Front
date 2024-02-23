@@ -8,7 +8,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ListCompetitionComponent } from './components/competition/list-competition/list-competition.component';
 import { AddCompetitionComponent } from './components/competition/add-competition/add-competition.component';
 import { UpdateCompetitionComponent } from './components/competition/update-competition/update-competition.component';
@@ -27,6 +27,9 @@ import { UpdateMemberComponent } from './components/member/update-member/update-
 import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
 import { ListRankingComponent } from './components/ranking/list-ranking/list-ranking.component';
 import { CompetitionStatusComponent } from './components/competition/competition-status/competition-status.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { CompetitionStatusComponent } from './components/competition/competition
     UpdateMemberComponent,
     AddRankingComponent,
     ListRankingComponent,
-    CompetitionStatusComponent
+    CompetitionStatusComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,9 @@ import { CompetitionStatusComponent } from './components/competition/competition
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
