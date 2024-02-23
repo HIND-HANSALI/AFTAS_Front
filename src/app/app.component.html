@@ -2,13 +2,13 @@
   <app-navbar></app-navbar>
   <!-- Sidebar -->
 
- <app-sidebar></app-sidebar>
+ <app-sidebar *ngIf="showSidebar"></app-sidebar>
 
-  <main class="p-4 md:ml-64 h-auto pt-20">
+  <main class="p-4 md:ml-16 h-auto pt-20 p-4 ">
     <!-- <app-competition-status></app-competition-status> -->
     <router-outlet></router-outlet>
   </main>
 </div>
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 <!-- <app-sidebar></app-sidebar> -->
