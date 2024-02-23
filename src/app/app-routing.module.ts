@@ -19,28 +19,37 @@ import { AddMemberComponent } from './components/member/add-member/add-member.co
 import { AddRankingComponent } from './components/ranking/add-ranking/add-ranking.component';
 import { CompetitionStatusComponent } from './components/competition/competition-status/competition-status.component';
 import { ListRankingComponent } from './components/ranking/list-ranking/list-ranking.component';
-
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { authGuard } from './guards/auth.guard';
+import { adminGuard } from './guards/admin/admin.guard';
+import { juryGuard } from './guards/jury/jury.guard';
+import { allRolesGuard } from './guards/allRoles/all-roles.guard';
 const routes: Routes = [
   
-  { path: 'rankings', component:ListRankingComponent},
+  { path: 'rankings', component:ListRankingComponent,canActivate: [allRolesGuard]},
   { path: '', component:CompetitionStatusComponent},
-  { path: 'huntings', component:ListHuntingComponent},
-  { path: 'huntings/create', component: AddHuntingComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+
+  { path: 'huntings', component:ListHuntingComponent,canActivate: [juryGuard]},
+  { path: 'huntings/create', component: AddHuntingComponent,canActivate: [juryGuard]},
   { path: 'members', component: ListMemberComponent},
   { path: 'members/create', component: AddMemberComponent},
+
   { path: 'rakings/create', component: AddRankingComponent}, // register Member in a competition
   
-  { path: 'competitions', component: ListCompetitionComponent },
+  { path: 'competitions', component: ListCompetitionComponent,canActivate: [allRolesGuard] },
   // { path: '', component: NavbarComponent },
-  { path: 'competitions/create', component: AddCompetitionComponent },
-  { path: 'competitions/update/:id', component: UpdateCompetitionComponent },
+  { path: 'competitions/create', component: AddCompetitionComponent,canActivate: [juryGuard]},
+  { path: 'competitions/update/:id', component: UpdateCompetitionComponent,canActivate: [juryGuard]},
 
 
-  { path: 'levels', component: ListLevelComponent},
-  { path: 'levels/create', component: AddLevelComponent },
-  { path: 'levels/update', component: UpdateLevelComponent },
+  { path: 'levels', component: ListLevelComponent,canActivate: [adminGuard]},
+  { path: 'levels/create', component: AddLevelComponent},
+  { path: 'levels/update', component: UpdateLevelComponent},
 
-  { path: 'fish', component: ListFishComponent },
+  { path: 'fish', component: ListFishComponent,canActivate: [adminGuard]},
   { path: 'fish/create', component: AddFishComponent},
   { path: 'fish/update', component: UpdateFishComponent},
   { path: '**', redirectTo: '/not-found' },
