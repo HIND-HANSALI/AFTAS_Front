@@ -25,33 +25,35 @@ import { authGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin/admin.guard';
 import { juryGuard } from './guards/jury/jury.guard';
 import { allRolesGuard } from './guards/allRoles/all-roles.guard';
+import { MyCompetitionsComponent } from './components/competition/my-competitions/my-competitions.component';
+import { memberGuardGuard } from './guards/member/member-guard.guard';
 const routes: Routes = [
-  
+ 
   { path: 'rankings', component:ListRankingComponent,canActivate: [allRolesGuard]},
   { path: '', component:CompetitionStatusComponent},
+  { path: 'myCompetitions', component: MyCompetitionsComponent,canActivate: [memberGuardGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 
   { path: 'huntings', component:ListHuntingComponent,canActivate: [juryGuard]},
   { path: 'huntings/create', component: AddHuntingComponent,canActivate: [juryGuard]},
-  { path: 'members', component: ListMemberComponent},
-  { path: 'members/create', component: AddMemberComponent},
+  { path: 'members', component: ListMemberComponent,canActivate: [adminGuard]},
+  { path: 'members/create', component: AddMemberComponent,canActivate: [adminGuard]},
 
-  { path: 'rakings/create', component: AddRankingComponent}, // register Member in a competition
-  
-  { path: 'competitions', component: ListCompetitionComponent,canActivate: [allRolesGuard] },
-  // { path: '', component: NavbarComponent },
+  { path: 'rakings/create', component: AddRankingComponent,canActivate: [juryGuard]}, // register Member in a competition
+ 
+  { path: 'competitions', component: ListCompetitionComponent,canActivate: [allRolesGuard]},
   { path: 'competitions/create', component: AddCompetitionComponent,canActivate: [juryGuard]},
   { path: 'competitions/update/:id', component: UpdateCompetitionComponent,canActivate: [juryGuard]},
 
 
   { path: 'levels', component: ListLevelComponent,canActivate: [adminGuard]},
-  { path: 'levels/create', component: AddLevelComponent},
-  { path: 'levels/update', component: UpdateLevelComponent},
+  { path: 'levels/create', component: AddLevelComponent,canActivate: [adminGuard]},
+  { path: 'levels/update', component: UpdateLevelComponent,canActivate: [adminGuard]},
 
   { path: 'fish', component: ListFishComponent,canActivate: [adminGuard]},
-  { path: 'fish/create', component: AddFishComponent},
-  { path: 'fish/update', component: UpdateFishComponent},
+  { path: 'fish/create', component: AddFishComponent,canActivate: [adminGuard]},
+  { path: 'fish/update', component: UpdateFishComponent,canActivate: [adminGuard]},
   { path: '**', redirectTo: '/not-found' },
 
   
