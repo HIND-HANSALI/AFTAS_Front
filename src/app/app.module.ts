@@ -30,6 +30,7 @@ import { CompetitionStatusComponent } from './components/competition/competition
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { MyCompetitionsComponent } from './components/competition/my-competitions/my-competitions.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
     ListRankingComponent,
     CompetitionStatusComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MyCompetitionsComponent
   ],
   imports: [
     BrowserModule,

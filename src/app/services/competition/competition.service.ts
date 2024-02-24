@@ -30,5 +30,9 @@ export class CompetitionService {
   deleteCompetition(id: number): Observable<any> {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
+  getMyCompetitions(): Observable<any> {
+    
+    return this.httpClient.get(`${this.baseURL}/current-user`);
+  }
 
 }
