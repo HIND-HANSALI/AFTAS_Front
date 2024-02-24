@@ -13,8 +13,8 @@ export class AddMemberComponent {
   newMember: Member = {
     id:0,
     membershipNumber: 0,
-    name: '',
-    familyName: '',
+    userName: '',
+    // familyName: '',
     accessDate: new Date(),
     nationality: '',
     identityDocumentType: IdentityDocumentType.IDENTITY_CARD, // Default value

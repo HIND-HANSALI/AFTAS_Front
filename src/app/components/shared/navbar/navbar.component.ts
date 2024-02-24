@@ -11,11 +11,11 @@ export class NavbarComponent {
 
   
 
-  hasAuthority(): boolean {
+  hasAuthorityMember(): boolean {
 
     const role = localStorage.getItem('role');
 
-    return this.isLoggedIn() && (role === 'ADMIN' || role === 'SUPER_ADMIN');
+    return this.isLoggedIn() && (role === 'ROLE_MEMBER');
   }
 
   isLoggedIn(): boolean {

@@ -33,8 +33,8 @@
                 <tr *ngFor="let ranking of rankings">
                     <td class="border border-gray-300 px-4 py-2">{{ ranking.rank }}</td>
                     <!-- <td class="border border-gray-300 px-4 py-2">{{ ranking.member?.name}}</td> -->
-                    <td class="border border-gray-300 px-4 py-2">{{ ranking.id.memberId}}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ ranking.id.competitionId }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ ranking.memberId}}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ ranking.competitionId }}</td>
                     <td class="border border-gray-300 px-4 py-2">{{ ranking.score }}</td>
                 </tr>
             </tbody>

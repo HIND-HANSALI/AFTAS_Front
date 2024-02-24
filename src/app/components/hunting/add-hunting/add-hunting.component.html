@@ -24,7 +24,7 @@
                    id="memberId" name="memberId" [(ngModel)]="selectedMember" required>
 
                     <option *ngFor="let member of members" value="{{member.id}}">
-                        {{ member.name }}
+                        {{ member.userName }}
                     </option>
                 </select>
             </div>

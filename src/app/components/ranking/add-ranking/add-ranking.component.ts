@@ -22,6 +22,7 @@ export class AddRankingComponent {
   };
   members: any[] = [];
   competitions: any[] = [];
+  
 
   selectedMember:number =0 ;
   selectedCompetition:number =0 ;
@@ -43,9 +44,11 @@ export class AddRankingComponent {
     this.getCompetitions();
    
   }
+ 
   private getMembers(){
     this.memberService. getAllMembers().subscribe((data:any) => {
       this.members = data.data;
+      console.log(this.members[0]);
       console.log('Members data:', this.members); 
     });
 
@@ -62,7 +65,8 @@ export class AddRankingComponent {
 
       this.newRanking.memberId = this.selectedMember;
     this.newRanking.competitionId = this.selectedCompetition;
-
+console.log("hiiiiii",this.newRanking);
+console.log("selectedMembe",this.selectedMember);
       // console.log(`View member with number ${rankingData}`);
       this.rankingService.saveRanking(this.newRanking).subscribe(
         (createdRanking:Ranking) => {
@@ -77,4 +81,7 @@ export class AddRankingComponent {
     
   }
 
+  onMemberSelectionChange(selectedValue: any) {
+    console.log('Selected value:', selectedValue);
+  }
 }

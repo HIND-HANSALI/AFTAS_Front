@@ -109,10 +109,15 @@ id="drawer-navigation"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >All Competitions</a>
         </li>
-        <li>
+        <li *ngIf="hasAuthorityManager()">
           <a routerLink="/rakings/create"
             class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
             >Register Member in Competition</a>
+        </li>
+        <li>
+          <a routerLink="/myCompetitions"
+            class="flex items-center p-2 pl-11 w-full text-base font-medium text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+            >My Competitions</a>
         </li>
        
       </ul>
