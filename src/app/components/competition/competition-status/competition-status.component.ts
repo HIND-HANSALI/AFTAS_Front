@@ -53,7 +53,7 @@ export class CompetitionStatusComponent {
   public formatDate (dateString: string): Date {
     const [year, month, day] = dateString.split('-').map(Number);
     // Les mois sont indexés à partir de 0 dans Date, alors nous soustrayons 1
-    return new Date(2000 + year, month - 1, day);
+    return new Date(year, month - 1, day);
   }
  
 }
