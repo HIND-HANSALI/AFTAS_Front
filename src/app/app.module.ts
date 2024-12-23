@@ -31,8 +31,6 @@ import { CompetitionStatusComponent } from './components/competition/competition
 @NgModule({
   declarations: [
     AppComponent,
-   
-  
     NavbarComponent,
     SidebarComponent,
     ListCompetitionComponent,
